@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #06b6d4; /* Bright Cyan */
+  --color-secondary: #0ea5e9;
+  --color-background-dark: #09090b; /* Zinc 950 */
+  --color-surface-dark: #121214;
+  --color-surface-hover: #1f1f22;
+  --color-text-light: #f4f4f5;
+  --color-text-muted: #a1a1aa;
+  
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Roboto Mono', monospace;
+  
+  --animate-fade-in: fadeIn 0.8s ease-out;
+  --animate-slide-up: slideUp 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body {
+  @apply bg-background-dark text-text-light font-sans antialiased selection:bg-primary/30 selection:text-primary;
+}
+
+.card {
+  @apply bg-surface-dark border border-white/5 rounded-xl;
+}
+
+.pill {
+  @apply px-3 py-1.5 text-xs font-medium rounded-md bg-white/5 text-text-muted border border-white/5 hover:border-primary/50 hover:text-primary transition-colors cursor-default;
+}
+
+.section-label {
+  @apply text-xs font-mono font-semibold tracking-[0.2em] text-primary uppercase mb-2 block;
+}
+
+.gradient-text {
+  @apply text-primary; /* Lovable design uses solid cyan, not gradients */
+}
