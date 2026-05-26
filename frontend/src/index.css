@@ -1,19 +1,31 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #06b6d4; /* Bright Cyan */
+  --color-primary: #06b6d4;
   --color-secondary: #0ea5e9;
-  --color-background-dark: #09090b; /* Zinc 950 */
+  --color-background-dark: #09090b;
   --color-surface-dark: #121214;
   --color-surface-hover: #1f1f22;
   --color-text-light: #f4f4f5;
   --color-text-muted: #a1a1aa;
-  
+
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'Fira Code', 'Roboto Mono', monospace;
-  
+
   --animate-fade-in: fadeIn 0.8s ease-out;
   --animate-slide-up: slideUp 0.6s ease-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.light {
+  --color-background-dark: #f8fafc;
+  --color-surface-dark: #ffffff;
+  --color-surface-hover: #f1f5f9;
+  --color-text-light: #0f172a;
+  --color-text-muted: #64748b;
 }
 
 @keyframes fadeIn {
@@ -31,11 +43,11 @@ body {
 }
 
 .card {
-  @apply bg-surface-dark border border-white/5 rounded-xl;
+  @apply bg-surface-dark border border-text-muted/15 rounded-xl;
 }
 
 .pill {
-  @apply px-3 py-1.5 text-xs font-medium rounded-md bg-white/5 text-text-muted border border-white/5 hover:border-primary/50 hover:text-primary transition-colors cursor-default;
+  @apply px-3 py-1.5 text-xs font-medium rounded-md bg-text-muted/10 text-text-muted border border-text-muted/15 hover:border-primary/50 hover:text-primary transition-colors cursor-default;
 }
 
 .section-label {

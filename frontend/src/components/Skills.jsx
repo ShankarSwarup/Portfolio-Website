@@ -4,28 +4,32 @@ import { motion } from 'framer-motion';
 const skillsGroups = [
   {
     title: 'LANGUAGES',
-    skills: ['JavaScript', 'TypeScript', 'Python', 'C++', 'HTML5', 'CSS3']
+    skills: ['JavaScript', 'TypeScript', 'Python', 'C++'],
   },
   {
     title: 'FRAMEWORKS & LIBRARIES',
-    skills: ['Angular', 'React', 'Express.js', 'React Native']
+    skills: ['Node.js', 'FastAPI', 'Express.js', 'Angular', 'React', 'React Native'],
   },
   {
-    title: 'BACKEND & DATA',
-    skills: ['Node.js', 'REST APIs', 'JWT', 'Redis', 'MongoDB', 'SQL']
+    title: 'BACKEND',
+    skills: ['REST APIs', 'JWT Authentication', 'OAuth2', 'RBAC', 'Async Processing', 'Event-Driven Architecture'],
+  },
+  {
+    title: 'DATABASES',
+    skills: ['MongoDB', 'Aggregation Pipelines', 'Schema Design', 'Indexing', 'Motor (async)'],
   },
   {
     title: 'CLOUD & DEVOPS',
-    skills: ['AWS Lambda', 'SQS', 'S3', 'CloudWatch', 'EventBridge', 'GitHub Actions', 'CI/CD']
+    skills: ['AWS Lambda', 'SQS', 'S3', 'SSM', 'CloudWatch', 'EventBridge', 'Docker', 'CI/CD Pipelines', 'Git', 'GitHub Actions'],
   },
   {
-    title: 'TESTING',
-    skills: ['Mocha', 'Sinon.js', 'Unit Testing', 'Integration Testing']
+    title: 'TOOLS & INTEGRATIONS',
+    skills: ['Puppeteer', 'EJS', 'Brevo', 'Axios', 'Mocha', 'Sinon.js'],
   },
   {
     title: 'PRACTICES',
-    skills: ['System Design', 'Distributed Systems', 'Scalability', 'Performance Optimization', 'Agile/Scrum']
-  }
+    skills: ['System Design', 'Multi-Tenant Architecture', 'Performance Optimization', 'Agile/Scrum'],
+  },
 ];
 
 const Skills = () => {
@@ -39,27 +43,25 @@ const Skills = () => {
           className="mb-12"
         >
           <span className="section-label">EXPERTISE</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl md:text-5xl font-bold text-text-light">
             Technical <span className="text-primary">Arsenal</span>
           </h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillsGroups.map((group, index) => (
-            <motion.div 
+            <motion.div
               key={group.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card p-8 border-white/5 bg-[#141416]"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="card p-8"
             >
               <h3 className="text-sm font-mono text-primary mb-6 tracking-widest">{group.title}</h3>
               <div className="flex flex-wrap gap-2">
-                {group.skills.map((skill) => (
-                  <span key={skill} className="pill hover:text-primary hover:border-primary/50 transition-colors">
-                    {skill}
-                  </span>
+                {group.skills.map(skill => (
+                  <span key={skill} className="pill">{skill}</span>
                 ))}
               </div>
             </motion.div>
